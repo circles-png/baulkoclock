@@ -3,8 +3,12 @@
         "default_icon": "Images/Orange.png",
         "default_popup": "popup.html"
     },
-    "background",
-   "description": "A bell times extension for Baulkham Hills High School.",
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "description": "A bell times extension for Baulkham Hills High School.",
     "icons": {
         "128": "Images/Orange.png"
     },
