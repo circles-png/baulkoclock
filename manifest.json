@@ -1,23 +1,20 @@
 {
-    "action": {
+    "browser_action": {
         "default_icon": "Images/Orange.png",
         "default_popup": "popup.html"
     },
     "background": {
-        "service_worker": "background.js"
+        "scripts": ["background.js"]
     },
     "description": "A bell times extension for Baulkham Hills High School.",
     "icons": {
         "256": "Images/Orange.png"
     },
-    "manifest_version": 3,
+    "manifest_version": 2,
     "name": "Baulko Clock",
     "permissions": [
         "storage"
     ],
     "update_url": "https://clients2.google.com/service/update2/crx",
-    "version": "1.1.3",
-    "applications": {
-        "gecko": ""
-    }
+    "version": "1.1.3"
 }
