@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Baulko Clock</title>
+</head>
+
+<body class="d-flex justify-content-center text-light bg-dark font-helvetica">
+  <noscript>Enable JavaScript to use this extension!</noscript>
+
+  <div class="container w-100 h-100 mt-4">
+    <div class="row fs-2 text-nowrap text-center mx-5 mt-5" id="time-wrapper">
+      <span class="h1"><span id="period"></span></span>
+      <span class="h3" id="timeleft"></span>
+    </div>
+    <div class="row m-3">
+      <a href="settings.html" class="btn col-1 ms-auto">
+        <img src="Images/gear-fill-light.svg" alt="Settings">
+      </a>
+    </div>
+  </div>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script src="bootstrap.bundle.min.js"></script>
+  <script src="belltimes.js"></script>
+  <script src="popup.js"></script>
+  <script src="theme.js"></script>
+
+</body>
+
+</html>
