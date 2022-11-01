@@ -54,10 +54,20 @@ function showTime() {
     }
 
     if (minutesleft >= 60 && weekend == 0) {
-        var timeleft = "Not school yet!";
+            if (date.getHours() >= 12) {
+                var timeleft = "Ahh... afternoons.";
+            }
+            else {
+                var timeleft = "Good morning!"
+            }
     }
     else if (weekend == 1) {
-        var timeleft = "Weekend!";
+        if (date.getDay() == 6) {
+            var timeleft = "Saturday!";
+        }
+        else if (date.getDay() == 0) {
+            var timeleft = "Sunday!";
+        }
     }
 
     var timeDisplay = $("#timeleft");
@@ -67,16 +77,6 @@ function showTime() {
         var periodDisplay = $("#period")
         periodDisplay.text(daydata.period[daydata.times.indexOf(nextminute)]);
     }
-
-    // if (minutesleft == 30) {
-    //     chrome.notifications.create({
-    //         type: 'basic',
-    //         iconUrl: 'path',
-    //         title: 'Baulko Clock Says',
-    //         message: 'Two minutes until ' + daydata.period[daydata.times.indexOf(nextminute)],
-    //         priority: 2
-    //     })
-    // }
 
     setTimeout(showTime, 1);
 }

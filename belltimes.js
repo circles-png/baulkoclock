@@ -14,7 +14,7 @@ var belltimes = {
             "Lunch 2 in:",
             "Period 7 in:",
             "Period 8 in:",
-            "End in:"
+            "End in:",
         ],
         times: [
             518,
