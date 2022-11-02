@@ -15,7 +15,7 @@ jobs:
         
       - uses: actions/upload-artifact@v3.1.1
         with:
-          name: Baulko Clock
+          name: Baulko Clock.zip
           path: ./BaulkoClock.zip
 
   build:
@@ -24,9 +24,13 @@ jobs:
     
     steps:
       - uses: actions/checkout@v3.1.0
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3.5.1
       - name: Build for Firefox
-        run: |
-          npm install --global web-ext
-          web-ext build
+        uses: kewisch/action-web-ext@v1.0
+        with:
+          cmd: build
+  
+      - uses: actions/upload-artifact@v3.1.1
+        with:
+          name: Baulko Clock.xpi
+          path: ${{ steps.web-ext-build.outputs.target }}
+        
