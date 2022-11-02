@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3.1.0
       - run: |
-          zip -r9 BaulkoClock.zip ./
+          zip -r9 BaulkoClock.zip ./ -x "*.git*" -x "*.github*"
           
       - uses: actions/upload-artifact@v3.1.1
         with:
