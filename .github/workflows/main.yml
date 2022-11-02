@@ -1,4 +1,4 @@
-name: Compress Baulko ⌚
+name: Build Baulko ⌚
 
 on: [push, workflow_dispatch]
 
@@ -9,9 +9,16 @@ jobs:
     
     steps:
       - uses: actions/checkout@v3.1.0
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.5.1
+      - name: Compress for Chrome Web Store
       - run: |
           zip -r9 BaulkoClock.zip ./ -x "*.git*" -x "*.github*"
-          
+      - name: Build for Firefox
+        run: |
+          npm install --global web-ext
+          web-ext build
+        
       - uses: actions/upload-artifact@v3.1.1
         with:
           name: Baulko Clock
