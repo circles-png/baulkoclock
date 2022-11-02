@@ -29,7 +29,6 @@ jobs:
         uses: kewisch/action-web-ext@v1.0
         with:
           cmd: build
-          filename: "{name}-{version}.xpi"
 
       - uses: actions/upload-artifact@v3.1.1
         with:
