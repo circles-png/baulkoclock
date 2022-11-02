@@ -10,7 +10,7 @@
         "default_popup": "popup.html",
         "default_icon": "Images/Orange.png"
     },
-    "permissions": ["storage"]
+    "permissions": ["storage"],
     "applications": {
         "gecko": {
             "id": "baulko@clock"
