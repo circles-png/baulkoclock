@@ -11,4 +11,9 @@
         "default_icon": "Images/Orange.png"
     },
     "permissions": ["storage"]
+    "applications": {
+        "gecko": {
+            "id": "baulko@clock"
+        }
+    }
 }
