@@ -24,11 +24,13 @@ jobs:
     
     steps:
       - uses: actions/checkout@v3.1.0
-      - name: Build for Firefox
+      - id: web-ext-build
+        name: Build for Firefox
         uses: kewisch/action-web-ext@v1.0
         with:
           cmd: build
-  
+          filename: "{name}-{version}.xpi"
+
       - uses: actions/upload-artifact@v3.1.1
         with:
           name: Baulko Clock.xpi
