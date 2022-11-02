@@ -15,7 +15,7 @@ jobs:
         
       - uses: actions/upload-artifact@v3.1.1
         with:
-          name: Baulko Clock.zip
+          name: Baulko Clock for Chrome Web Store
           path: ./BaulkoClock.zip
 
   build:
@@ -32,6 +32,6 @@ jobs:
 
       - uses: actions/upload-artifact@v3.1.1
         with:
-          name: Baulko Clock.xpi
+          name: Baulko Clock for Firefox
           path: ${{ steps.web-ext-build.outputs.target }}
         
