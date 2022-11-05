@@ -1,0 +1,1 @@
+"use strict";const themeSwitch=document.getElementById("themeSwitch");chrome.storage.sync.get("baulkoTheme",e=>{themeSwitch.checked=e.baulkoTheme}),themeSwitch.onchange=e=>{e=e.target;chrome.storage.sync.set({baulkoTheme:e.checked},()=>{console.log("Successfully written baulkoTheme: ${themeSwitch.checked}")})};
