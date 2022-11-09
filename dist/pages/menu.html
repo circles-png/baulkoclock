@@ -6,22 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/output.css">
-  <title>Menu</title>
 </head>
 
-<body class="overflow-hidden font-sans bg-slate-800 text-slate-200 extension-size">
+<body
+  class="overflow-hidden font-sans bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-slate-200 extension-size">
   <div class="absolute z-20 flex justify-start w-full p-2">
-    <a href="popup.html" class="flex rounded-lg">
+    <a href="popup.html" class="flex rounded-lg dark:invert">
       <img src="../images/menu.svg" alt="Menu">
     </a>
   </div>
   <div class="grid h-screen place-items-center animate-fadein">
-    <div class="grid text-center">
+    <div class="grid">
       <span class="text-4xl">Menu</span>
-      <a href="settings.html" class="text-2xl transition-all duration-300 hover:bg-slate-200 hover:text-slate-800">Settings</a>
-      <a href="about.html" class="text-2xl transition-all duration-300 hover:bg-slate-200 hover:text-slate-800">About</a>
+      <a href="settings.html"
+        class="text-2xl text-center transition-all duration-300 dark:hover:bg-slate-200 dark:hover:text-slate-800 hover:text-slate-200 hover:bg-slate-800">Settings</a>
+      <a href="about.html"
+        class="text-2xl text-center transition-all duration-300 dark:hover:bg-slate-200 dark:hover:text-slate-800 hover:text-slate-200 hover:bg-slate-800">About</a>
     </div>
   </div>
+  <script src="../js/theme.js"></script>
 </body>
 
 </html>

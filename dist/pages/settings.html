@@ -5,30 +5,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <title>Settings</title>
+  <link rel="stylesheet" href="../css/output.css">
 </head>
 
-<body class="d-flex justify-content-center text-light bg-dark popup">
-  <noscript>Enable JavaScript to use this extension!</noscript>
-  <div class="container mt-4 w-100 h-100">
-    <div class="mx-5 mt-5 mb-5 text-center row fs-2 text-nowrap">
-      <span class="h1">Settings</span>
-      <div class="text-center form-check form-switch row d-flex justify-content-center">
-        <label class="form-check-label h6" for="flexSwitchCheckChecked">
-          <input class="form-check-input justify-content-end" type="checkbox" role="switch" id="flexSwitchCheckChecked"
-          checked />Dark mode</label>
-      </div>
-    </div>
-    <div class="mt-2 fixed-top">
-      <a href="menu.html" class="btn col-1 me-auto">
-        <img src="../images/list-fill-light.svg" alt="Menu">
-      </a>
-    </div>
+<body class="overflow-hidden font-sans bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-slate-200 extension-size">
+  <div class="absolute z-20 flex justify-start w-full p-2">
+    <a href="menu.html" class="flex rounded-lg dark:invert">
+      <img src="../images/menu.svg" alt="Menu">
+    </a>
   </div>
 
-  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="../js/output.js"></script>
+  <div class="grid h-screen place-items-center animate-fadein">
+    <div class="grid text-center">
+      <span class="text-4xl">Settings</span>
+      <div
+        class="flex justify-center gap-4 transition-all duration-300 dark:hover:bg-slate-200 dark:hover:text-slate-800 hover:text-slate-200 hover:bg-slate-800">
+        <label for="themeSwitch">Dark mode</label>
+        <input type="checkbox" name="themeSwitch" id="themeSwitch">
+      </div>
+    </div>
+  </div>
+  <script src="../js/theme.js"></script>
+  <script src="../js/settings.js"></script>
 </body>
 
 </html>

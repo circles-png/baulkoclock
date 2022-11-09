@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: ["./dist/**/*.{html,js}"],
   theme: {
     extend: {
@@ -7,7 +8,7 @@ module.exports = {
         "sans": ["SFUIDisplay"],
       },
       animation: {
-        "fadein": "fadein 2s ease-out",
+        "fadein": "fadein 1s ease-out",
       },
       keyframes: {
         fadein: {

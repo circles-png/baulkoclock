@@ -1,12 +1,15 @@
 const themeSwitch = document.getElementById("themeSwitch") as HTMLInputElement;
 
-chrome.storage.sync.get("baulkoTheme", (items: { [baulkoTheme: string]: boolean }) => {
-    themeSwitch.checked = items.baulkoTheme
-})
-
 themeSwitch.onchange = (event) => {
     let target = event.target as HTMLInputElement;
     chrome.storage.sync.set({ baulkoTheme: target.checked }, () => {
-        console.log("Successfully written baulkoTheme: ${themeSwitch.checked}")
+        console.log(`Successfully written baulkoTheme for Chrome: ${themeSwitch.checked}`)
     })
+    browser.storage.sync.set({ baulkoTheme: target.checked }).then(() => {
+        console.log(`Successfully written baulkoTheme for Firefox: ${themeSwitch.checked}`)
+    })
+
+    updateTheme()
 }
+
+getThemeFromStorage().then(dark => themeSwitch.checked = dark)
