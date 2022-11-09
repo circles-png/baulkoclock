@@ -8,7 +8,7 @@
     },
     "description": "A bell times extension for Baulkham Hills High School.",
     "icons": {
-        "256": "dist/images/orange.png"
+        "64": "dist/images/orange.png"
     },
     "name": "Baulko Clock",
     "permissions": [
