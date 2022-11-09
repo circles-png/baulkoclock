@@ -14,6 +14,10 @@ echo     dist/css
 cmd /c del /q "dist\css\output.min.css"
 echo     Done!
 
+echo     dist/pages
+cmd /c del /q "dist\pages\*.html"
+echo     Done!
+
 echo Building all...
 
 echo Building TailwindCSS
