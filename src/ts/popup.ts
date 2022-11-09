@@ -3,10 +3,9 @@ type DayData = {
     times: number[]
 }
 
-
 let weekend: boolean = false
 let daydata: DayData
-const date = new Date();
+let date = new Date();
 
 switch (date.getDay()) {
     case 1:
@@ -35,6 +34,7 @@ switch (date.getDay()) {
 }
 
 const showTime = () => {
+    date = new Date();
     const seconds =
         date.getHours() * 3600
         + date.getMinutes() * 60
