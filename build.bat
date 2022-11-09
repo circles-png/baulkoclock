@@ -11,13 +11,13 @@ cmd /c del /q "dist\js\*.js.map"
 echo     Done!
 
 echo     dist/css
-cmd /c del /q "dist\css\*.css"
+cmd /c del /q "dist\css\output.min.css"
 echo     Done!
 
 echo Building all...
 
 echo Running TailwindCSS
-cmd /c tailwindcss -i ./src/css/input.css -o ./dist/css/output.css
+cmd /c tailwindcss -i ./src/css/input.css -o ./dist/css/output.min.css
 
 echo Running TypeScript
 cmd /c tsc -b -f
