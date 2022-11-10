@@ -4,11 +4,14 @@ module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
     extend: {
+      borderRadius: {
+        "ish": "3px"
+      },
       fontFamily: {
         "sans": ["SFUIDisplay"],
       },
       animation: {
-        "fadein": "fadein 1s ease-out",
+        "fadein": "fadein 0.5s ease-out",
       },
       keyframes: {
         fadein: {
@@ -22,7 +25,4 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
 }
