@@ -9,11 +9,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3.1.0
+      - uses: actions/setup-node@v3.5.1
       - name: Compress for Chrome Web Store
-        run: |
-          zip -r9 BaulkoClock.zip ./ -x "*.git*" -x "*.github*"
+        run: ./build.sh
 
       - uses: actions/upload-artifact@v3.1.1
         with:
           name: Baulko Clock for Chrome Web Store
-          path: ./BaulkoClock.zip
+          path: ./web-ext-artifacts/baulko_clock-2.0.1.zip
