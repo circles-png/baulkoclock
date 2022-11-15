@@ -37,5 +37,5 @@ cmd /c html-minifier --collapse-whitespace --remove-comments --remove-optional-t
 echo Done!
 
 echo web-ext building...
-cmd /c web-ext build -o -i "*.code-workspace" "src/" "*.bat" "package-lock.json" "*.md" "tailwind.config.js" "tsconfig.*" "**/*.js.map"
+cmd /c web-ext build -o -i "*.code-workspace" "src/" "*.bat" "*.sh" "package-lock.json" "*.md" "tailwind.config.js" "tsconfig.*" "**/*.js.map"
 echo All done!
