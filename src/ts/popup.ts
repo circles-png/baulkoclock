@@ -6,6 +6,7 @@ type DayData = {
 let weekend: boolean = false
 let daydata: DayData
 let date = new Date();
+const timeDisplay = document.getElementById("timeDisplay") as HTMLSpanElement
 
 switch (date.getDay()) {
     case 1:
@@ -73,8 +74,14 @@ const showTime = () => {
         }
     }
 
-    const timeDisplay = document.getElementById("timeDisplay") as HTMLSpanElement
     timeDisplay.textContent = timeLeft
+    if (Array.from(timeLeft).some(char => char.toLowerCase() !== char.toUpperCase())) {
+        timeDisplay.classList.add("text-3xl")
+        timeDisplay.classList.remove("text-4xl")
+    } else {
+        timeDisplay.classList.add("text-4xl")
+        timeDisplay.classList.remove("text-3xl")
+    }
 }
 
 setInterval(showTime, 200)
