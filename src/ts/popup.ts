@@ -35,7 +35,7 @@ switch (date.getDay()) {
 }
 
 const showTime = () => {
-    date = new Date();
+    date = new Date()
     const seconds =
         date.getHours() * 3600
         + date.getMinutes() * 60
@@ -43,11 +43,11 @@ const showTime = () => {
     const minutes =
         date.getHours() * 60
         + date.getMinutes()
-    const nextMinute = Math.min(...daydata.times.filter((value) => { return value > minutes }))
-    const nextSecond = nextMinute * 60
+    const nextPeriodMinute = Math.min(...daydata.times.filter((value) => { return value > minutes }))
+    const nextPeriodSecond = nextPeriodMinute * 60
 
-    let minutesLeft = -(minutes - nextMinute) - 1
-    let secondsLeft = -(seconds - nextSecond) - (minutesLeft * 60) - 1
+    let minutesLeft = nextPeriodMinute - minutes - 1
+    let secondsLeft = nextPeriodSecond - seconds - minutesLeft * 60 - 1
     let timeLeft: string;
 
     if (minutesLeft < 0) minutesLeft = 0
@@ -60,17 +60,18 @@ const showTime = () => {
             timeLeft = "Saturday!"
         else if (date.getDay() == 0)
             timeLeft = "Sunday!"
-    }
-    else {
-        if (minutesLeft >= 60) {
-            if (date.getHours() >= 12)
+    } else {
+        if (seconds > 54360) {
+            if (date.getHours() <= 12)
+                timeLeft = "Good morning!"
+            else if (date.getHours() <= 20)
                 timeLeft = "Ahh... afternoons."
             else
-                timeLeft = "Good morning!"
+                timeLeft = "Have a good night!"
         }
         else {
             const periodDisplay = document.getElementById("period") as HTMLSpanElement
-            periodDisplay.textContent = `${daydata.period[daydata.times.indexOf(nextMinute)]} in`
+            periodDisplay.textContent = `${daydata.period[daydata.times.indexOf(nextPeriodMinute)]} in`
         }
     }
 
