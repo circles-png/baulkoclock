@@ -61,17 +61,19 @@ const showTime = () => {
         else if (date.getDay() == 0)
             timeLeft = "Sunday!"
     } else {
-        if (seconds > 54360) {
-            if (date.getHours() <= 12)
-                timeLeft = "Good morning!"
-            else if (date.getHours() <= 20)
-                timeLeft = "Ahh... afternoons."
-            else
-                timeLeft = "Have a good night!"
+        // Weekday
+        if (seconds <= 31200) { // 8:40 am
+            timeLeft = "Good morning!"
         }
-        else {
+        else if (seconds <= 54360) { // 3:06 pm
             const periodDisplay = document.getElementById("period") as HTMLSpanElement
             periodDisplay.textContent = `${daydata.period[daydata.times.indexOf(nextPeriodMinute)]} in`
+        }
+        else if (date.getHours() <= 18) { // 6 pm
+            timeLeft = "Ahh... afternoons."
+        }
+        else { // > 6 pm
+            timeLeft = "Have a good night!"
         }
     }
 

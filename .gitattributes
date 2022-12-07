@@ -1,0 +1,3 @@
+dist/** linguist-generated=true
+src/js/** linguist-generated=true
+tsconfig.buildinfo linguist-generated=true
